@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Grand Slang';
+  src: url('../fonts/GrandSlang-B-Side.ttf');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,4 +35,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.nav-links::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #292929;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links:hover::after {
+  width: 70%;
 }
