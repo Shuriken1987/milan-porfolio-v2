@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Grand Slang";
+    src: url("../public/fonts/GrandSlang-B-Side.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ppneuemontreal-book";
+    src: url("../public/fonts/ppneuemontreal-book.otf");
+    font-display: swap;
+  }

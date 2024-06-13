@@ -17,8 +17,7 @@ const styles = {
     // paddingY: 'sm:py-16 py-6',
     // padding: 'sm:px-16 px-6 sm:py-16 py-10',
   
-    heroHeadText:
-      ' text-transparent  lg:text-[180px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[90px] mt-2',
+    heroHeadText: 'xl:text-[180px] lg:text-[160px] md:text-[120px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[90px] mt-2',
     // heroSubText:
     //   'text-eerieBlack font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]',
   

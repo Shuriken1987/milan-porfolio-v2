@@ -1,6 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { ReactNode, useRef, useState } from "react";
+// import { cn } from "@/utils/cn";
+// import { SocialHandle } from "@/utils/interfaces";
+import Link from "next/link";
 import { SectionHeading, TextReveal } from "../ui/Typography";
 import { SlideIn, Transition } from "../ui/Transitions";
 import { Input, Textarea } from "../ui/Input";
@@ -161,6 +164,39 @@ export const Footer = () => {
               </div>
             </form>
           </div>
+          {/* <div className="md:justify-self-end flex flex-col"> */}
+          {/* <div className="pb-4">
+              <Transition>
+                <span className="text-white/90">Get in touch</span>
+              </Transition>
+              <div className="text-2xl md:text-4xl font-bold py-2">
+                <Transition>
+                  <TextReveal>{email}</TextReveal>
+                </Transition>
+              </div>
+              <Transition>
+                <div className="pb-1 text-white/80">{about.phoneNumber}</div>
+              </Transition>
+              <Transition>
+                <div className="text-white/80">{about.address}</div>
+              </Transition>
+            </div> */}
+
+          {/* <div className="flex md:gap-8 gap-4 mt-auto md:pb-16">
+              {social_handle.map((social, index) =>
+                social.enabled ? (
+                  <Transition
+                    key={social._id}
+                    transition={{ delay: 0.4 + index * 0.1 }}
+                  >
+                    <Link href={social.url}>
+                      <TextReveal>{social.platform}</TextReveal>
+                    </Link>
+                  </Transition>
+                ) : null
+              )}
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
       <footer className="flex items-center justify-between md:px-8 px-2 pt-4 pb-0 text-sm">
@@ -175,3 +211,31 @@ export const Footer = () => {
   );
 };
 
+// interface BackgroundScaleProps {
+//   children: ReactNode;
+//   className?: string;
+// }
+
+// export const BackgroundScale = ({
+//   children,
+//   className,
+// }: BackgroundScaleProps) => {
+//   return (
+//     <motion.div
+//       whileHover="whileHover"
+//       whileFocus="whileHover"
+//       whileTap="whileHover"
+//       initial="initial"
+//       className={cn("relative p-1 group", className)}
+//     >
+//       <motion.span
+//         variants={{
+//           initial: { scaleY: 0 },
+//           whileHover: { scaleY: 1 },
+//         }}
+//         className="absolute top-0 left-0 h-full w-full bg-primary -z-10 group-hover:text-black"
+//       />
+//       {children}
+//     </motion.div>
+//   );
+// };

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   content: [
@@ -8,16 +9,49 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       fontFamily: {
-        grandSlang: ['Grand Slang', 'cursive'],
+        grandSlang: ['var(--grandSlang)', 'cursive'],
+        neueMontreal: ['var(--neueMontreal)', 'sans-serif'],
+      },
+      screens: {
+        'xs': '320px',
+        ...defaultTheme.screens,
       },
     },
   },
-  plugins: [],
+  plugins: [function({ addUtilities }: { addUtilities: Function }) {
+    const newUtilities = {
+      '.heroHeadings': {
+        'font-size': '50px',
+        'line-height': '25px',
+        '@screen sm': {
+          'font-size': '60px',
+        },
+        '@screen md': {
+          'font-size': '120px',
+          'line-height': '60px',
+        },
+        '@screen lg': {
+          'font-size': '160px',
+          'line-height': '90px',
+        },
+        '@screen xl': {
+          'font-size': '180px',
+        },
+        'margin-top': '0.5rem', // Equivalent to mt-2
+        'font-family': 'var(--grandSlang), cursive',
+      },
+      '.paddingX': {
+        'padding-left': '1.5rem', // Equivalent to px-6
+        'padding-right': '1.5rem', // Equivalent to px-6
+        '@screen sm': {
+          'padding-left': '4rem', // Equivalent to sm:px-16
+          'padding-right': '4rem', // Equivalent to sm:px-16
+        },
+      },
+    }
+    addUtilities(newUtilities, ['responsive'])
+  }
+],
 };
 export default config;

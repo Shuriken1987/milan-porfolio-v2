@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { styles } from "@/styles";
+// import { styles } from "@/styles";
 import Link from "next/link";
 import logo from "../../public/assets/logo/logo.png";
 import Image from "next/image";
@@ -11,7 +11,7 @@ export const Navbar = () => {
   const [active, setActive] = useState("");
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-2 fixed transition-colors duration-500 hover:bg-white 
+    <nav className={`paddingX w-full flex items-center py-2 sticky transition-colors duration-500 hover:bg-white 
       top-0 z-20 bg-white sm:opacity-[0.97] xxs:h-[12vh]`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -40,7 +40,7 @@ export const Navbar = () => {
                 uppercase tracking-[3px] cursor-pointer nav-links text-neutral-600`}
               onClick={() => setActive(nav.title)}
             >
-              <Link href={`/#${nav.id}`}>{nav.title}</Link>
+              <Link href={`/${nav.id}`}>{nav.title}</Link>
             </li>
           ))}
         </ul>
