@@ -41,6 +41,27 @@ const config: Config = {
         'margin-top': '0.5rem', // Equivalent to mt-2
         'font-family': 'var(--grandSlang), cursive',
       },
+      '.sectionHeadings': {
+        'font-size': '48px',
+        'line-height': '40px',
+        '@screen sm': {
+          'font-size': '80px',
+          'line-height': '30px',
+        },
+        '@screen md': {
+          'font-size': '120px',
+          'line-height': '90px',
+        },
+        '@screen lg': {
+          'font-size': '160px',
+          'line-height': '120px',
+        },
+        '@screen xl': {
+          'font-size': '220px',
+          'line-height': '160px',
+        },
+        'font-family': 'var(--grandSlang), cursive',
+      },
       '.paddingX': {
         'padding-left': '1.5rem', // Equivalent to px-6
         'padding-right': '1.5rem', // Equivalent to px-6
