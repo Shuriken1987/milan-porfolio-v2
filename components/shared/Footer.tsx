@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef} from "react";
 // import { cn } from "@/utils/cn";
 // import { SocialHandle } from "@/utils/interfaces";
 import Link from "next/link";
@@ -9,98 +9,25 @@ import { SlideIn, Transition } from "../ui/Transitions";
 import { Input, Textarea } from "../ui/Input";
 import logo from "../../public/assets/logo/logo.png";
 import Image from "next/image";
-import emailjs from "@emailjs/browser";
-import SanitizeInputs from "@/utils/sanitizeInputs";
-import { toast } from "react-toastify";
+import { SectionTitle } from "./SectionTitle";
+import useContactForm from "@/hooks/useContactForm";
+import { socials } from "@/constants";
 
 export const Footer = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setErrors({});
-
-    const sanitizedEmail = form.email.toLowerCase();
-    const sanitizedName = form.name.trim();
-    const sanitizedSubject = form.subject.trim();
-    const sanitizedMessage = form.message.trim();
-
-    const errors = {};
-    SanitizeInputs(sanitizedEmail, sanitizedName, sanitizedSubject, sanitizedMessage, errors);
-
-    if (Object.keys(errors).length > 0) {
-      setErrors(errors);
-      setLoading(false);
-      return;
-    }
-
-    if (!form.name || !form.email || !form.message) {
-      setLoading(false);
-      toast.error("All fields required.");
-      return;
-    }
-
-    // sign up on emailjs.com (select the gmail service and connect your account).
-    //click on create a new template then click on save.
-    emailjs
-      .send(
-        "service_rughb4c", // paste your ServiceID here (you'll get one when your service is created).
-        "template_e845x3c", // paste your TemplateID here (you'll find it under email templates).
-        {
-          from_name: form.name,
-          to_name: "Milan Stanojevic", // put your name here.
-          from_email: form.email,
-          to_email: "stanojevicmilan17@yahoo.com", //put your email here.
-          subject: form.subject,
-          message: form.message,
-        },
-        "EiHO7Y6N70Cc4MwEG" //paste your Public Key here. You'll get it in your profile section.
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setErrors({});
-          toast.success("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
-          toast.error("Something went wrong. Please try again.");
-        }
-      );
-  };
+  const { formData, errors, loading, onHandleInput, handleSubmit } = useContactForm();
 
   return (
     <motion.section className="relative">
-      {/* <span className="blob size-1/2 absolute top-20 right-0 blur-[100px]" /> */}
+      <Transition>
+          <SectionTitle title="CONTACT" />
+        </Transition>
       <div className="p-4 md:p-8 md:px-16">
-        <SectionHeading className="font-grandSlang">
+      
+        {/* <SectionHeading className="font-grandSlang">
           <SlideIn className="text-slate-200 ">Get in touch</SlideIn> <br />{" "}
           <SlideIn>Contact</SlideIn>
-        </SectionHeading>
+        </SectionHeading> */}
         <div className="grid md:grid-cols-2 gap-10 md:pt-16">
           <div className="space-y-4">
             <form ref={formRef} onSubmit={handleSubmit}>
@@ -110,20 +37,19 @@ export const Footer = () => {
                     type="text"
                     name="name"
                     placeholder="Full name"
-                    className="border-0 border-b border-black rounded-none"
-                    value={form.name}
-                    onChange={handleChange}
+                    className="border-0 border-b border-black rounded-none font-grandSlang font-bold"
+                    value={formData.name}
+                    onChange={onHandleInput}
                   />
-                  
                 </Transition>
                 <Transition className="w-full mb-2">
                   <Input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="border-0 border-b border-black rounded-none"
-                    value={form.email}
-                    onChange={handleChange}
+                    className="border-0 border-b border-black rounded-none font-grandSlang font-bold"
+                    value={formData.email}
+                    onChange={onHandleInput}
                   />
                 </Transition>
               </div>
@@ -132,21 +58,21 @@ export const Footer = () => {
                   <Input
                     type="text"
                     name="subject"
-                    placeholder="Enter the subject"
-                    className="border-0 border-b border-black rounded-none"
-                    value={form.subject}
-                    onChange={handleChange}
+                    placeholder="Subject"
+                    className="border-0 border-b border-black rounded-none font-grandSlang font-bold"
+                    value={formData.subject}
+                    onChange={onHandleInput}
                   />
                 </Transition>
               </div>
               <div className="space-y-2">
                 <Transition>
                   <Textarea
-                    className="min-h-[100px] rounded-none border-0 border-b resize-none border-black"
+                    className="min-h-[100px] rounded-none border-0 border-b resize-none border-black font-grandSlang font-bold "
                     name="message"
-                    placeholder="Enter your message"
-                    value={form.message}
-                    onChange={handleChange}
+                    placeholder="Message"
+                    value={formData.message}
+                    onChange={onHandleInput}
                   />
                 </Transition>
               </div>
@@ -158,45 +84,52 @@ export const Footer = () => {
                     initial="initial"
                     className="border border-black px-8 py-2 mt-4 rounded-3xl relative overflow-hidden font-grandSlang font-bold"
                   >
-                    <TextReveal className="uppercase">{loading ? 'Sending...' : 'Send'}</TextReveal>
+                    <TextReveal className="uppercase">
+                      {loading ? "Sending..." : "Send"}
+                    </TextReveal>
                   </motion.button>
                 </Transition>
               </div>
             </form>
           </div>
-          {/* <div className="md:justify-self-end flex flex-col"> */}
-          {/* <div className="pb-4">
+          <div className="md:justify-self-end flex flex-col">
+          <div className="pb-4">
               <Transition>
-                <span className="text-white/90">Get in touch</span>
+                <SectionHeading className="font-grandSlang">
+                <span className="text-neutral-300">Get in touch</span>
+                </SectionHeading>
               </Transition>
-              <div className="text-2xl md:text-4xl font-bold py-2">
+              <div className="text-2xl md:text-4xl font-bold py-2 font-grandSlang">
                 <Transition>
-                  <TextReveal>{email}</TextReveal>
+                  <Link className="text-[18px]" href="mailto:stanojevicmilan17@yahoo.com">
+                  <TextReveal>stanojevicmilan17@yahoo.com</TextReveal>
+                  </Link>
                 </Transition>
               </div>
               <Transition>
-                <div className="pb-1 text-white/80">{about.phoneNumber}</div>
+                <Link href="tel:+46760578216">
+                <div className="pb-1 text-neutral-300 font-neueMontreal tracking-widest font-bold">+46760578216</div>
+                </Link>
               </Transition>
               <Transition>
-                <div className="text-white/80">{about.address}</div>
+                <div className="text-neutral-300 font-neueMontreal tracking-widest font-bold">Helsingborg, Sweden</div>
               </Transition>
-            </div> */}
+            </div>
 
-          {/* <div className="flex md:gap-8 gap-4 mt-auto md:pb-16">
-              {social_handle.map((social, index) =>
-                social.enabled ? (
+          <div className="flex md:gap-8 gap-4 mt-auto md:pb-16 font-neueMontreal tracking-widest">
+              {socials.map((social, index) =>
+               
                   <Transition
-                    key={social._id}
+                    key={social.platform}
                     transition={{ delay: 0.4 + index * 0.1 }}
                   >
-                    <Link href={social.url}>
+                    <Link href={social.url} target="_blank">
                       <TextReveal>{social.platform}</TextReveal>
                     </Link>
                   </Transition>
-                ) : null
               )}
-            </div> */}
-          {/* </div> */}
+            </div>
+          </div>
         </div>
       </div>
       <footer className="flex items-center justify-between md:px-8 px-2 pt-4 pb-0 text-sm">
@@ -204,38 +137,9 @@ export const Footer = () => {
           <Image src={logo} alt="logo" width={50} height={50} />
         </Transition>
         <Transition>
-          <div>&copy; {new Date().getFullYear()} Milan Stanojevic</div>
+          <div className="font-neueMontreal ">&copy; {new Date().getFullYear()} Milan Stanojevic</div>
         </Transition>
       </footer>
     </motion.section>
   );
 };
-
-// interface BackgroundScaleProps {
-//   children: ReactNode;
-//   className?: string;
-// }
-
-// export const BackgroundScale = ({
-//   children,
-//   className,
-// }: BackgroundScaleProps) => {
-//   return (
-//     <motion.div
-//       whileHover="whileHover"
-//       whileFocus="whileHover"
-//       whileTap="whileHover"
-//       initial="initial"
-//       className={cn("relative p-1 group", className)}
-//     >
-//       <motion.span
-//         variants={{
-//           initial: { scaleY: 0 },
-//           whileHover: { scaleY: 1 },
-//         }}
-//         className="absolute top-0 left-0 h-full w-full bg-primary -z-10 group-hover:text-black"
-//       />
-//       {children}
-//     </motion.div>
-//   );
-// };

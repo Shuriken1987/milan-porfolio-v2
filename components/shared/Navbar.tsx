@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
-// import { styles } from "@/styles";
 import Link from "next/link";
 import logo from "../../public/assets/logo/logo.png";
 import Image from "next/image";
 import { navLinks } from "@/constants";
 import { MobileNavbar } from "./MobileNavbar";
+import { NavLink } from "@/types";
 
-export const Navbar = () => {
-  const [active, setActive] = useState("");
-
+export const Navbar: React.FC = () => {
+  const [active, setActive] = useState<string>("");
   return (
     <nav className={`paddingX w-full flex items-center py-2 sticky transition-colors duration-500 hover:bg-white 
       top-0 z-20 bg-white sm:opacity-[0.97] xxs:h-[12vh]`}>
@@ -31,7 +30,7 @@ export const Navbar = () => {
           />
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">
-          {navLinks.map((nav) => (
+        {navLinks.map((nav: NavLink) => (
             <li
               key={nav.id}
               className={`${
@@ -45,9 +44,7 @@ export const Navbar = () => {
           ))}
         </ul>
         {/* MOBILE  */}
-        <MobileNavbar
-          navLinks={navLinks}
-        />
+        <MobileNavbar navLinks={navLinks} />
       </div>
     </nav>
   );

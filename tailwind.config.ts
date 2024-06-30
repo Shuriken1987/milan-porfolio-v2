@@ -38,7 +38,7 @@ const config: Config = {
         '@screen xl': {
           'font-size': '180px',
         },
-        'margin-top': '0.5rem', // Equivalent to mt-2
+        'margin-top': '0.5rem', 
         'font-family': 'var(--grandSlang), cursive',
       },
       '.sectionHeadings': {

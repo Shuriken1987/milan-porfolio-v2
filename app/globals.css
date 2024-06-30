@@ -44,3 +44,17 @@ body::-webkit-scrollbar {
 .nav-links:hover::after {
   width: 70%;
 }
+
+
+.blurb__heading {
+  margin: 0 0 15px 0;
+  /* color: #585858; */
+  font-size: 58px;
+  font-weight: 800;
+}
+  @media (max-width: 767px) {
+    .blurb__heading{
+      font-size: 32px;
+  
+    }
+  }

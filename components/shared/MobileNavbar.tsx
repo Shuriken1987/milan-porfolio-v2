@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import close from "../../public/assets/icons/close.png";
 import menu from "../../public/assets/icons/menu.png";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { NavLink } from "@/types";
 
 interface MobileNavbarProps {
-  navLinks: { id: string; title: string }[];
+  navLinks: NavLink[];
 }
 
 export const MobileNavbar: React.FC<MobileNavbarProps> = ({ navLinks }) => {
@@ -103,7 +103,7 @@ export const MobileNavbar: React.FC<MobileNavbarProps> = ({ navLinks }) => {
     >
       <div className="menu-container overflow-y-hidden">
         <motion.div
-          className="px-5 cursor-pointer"
+          className="cursor-pointer"
           variants={hideNavItemsVariant}
           onClick={() => setMobileNavOpen(true)}
         >
@@ -122,7 +122,7 @@ export const MobileNavbar: React.FC<MobileNavbarProps> = ({ navLinks }) => {
           Close
         </motion.button>
         <motion.ul className="list-none mt-[40px]" variants={ulVariant}>
-          {navLinks.map((navItem) => (
+          {navLinks.map((navItem: NavLink) => (
             <motion.li
               whileTap={{ scale: 0.95 }}
               key={navItem.id}
