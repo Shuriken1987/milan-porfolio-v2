@@ -2,7 +2,7 @@ import { Transition } from "@/components/ui/Transitions";
 
 export const Hero = () => {
   return (
-    <div className="relative overflow-hidden h-screen">
+    <section className="relative overflow-hidden h-screen">
       <div className="relative z-10 h-full flex items-center" >
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 flex items-center">
           <div className="max-w-4xl mx-auto">
@@ -29,6 +29,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

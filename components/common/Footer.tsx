@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <motion.section className="relative">
+    // <motion.section className="relative">
       <footer className="flex items-center justify-between md:px-8 px-2 pt-4 pb-0 text-sm">
         <Transition>
           <Image src={logo} alt="logo" width={50} height={50} />
@@ -17,6 +17,6 @@ export const Footer = () => {
           </div>
         </Transition>
       </footer>
-    </motion.section>
+    // </motion.section>
   );
 };

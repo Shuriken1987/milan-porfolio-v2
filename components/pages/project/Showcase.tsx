@@ -8,7 +8,7 @@ type ProjectProps = {
 
 export const Showcase = ({ project }: ProjectProps) => {
   return (
-    <div>
+    <section>
       <div className="max-w-4xl mx-auto mb-8">
         <h3 className="text-3xl font-neueMontreal font-bold tracking-wider pb-4">
           Project Showcase
@@ -20,7 +20,7 @@ export const Showcase = ({ project }: ProjectProps) => {
           title={project.title}
         />
       )}
-    </div>
+    </section>
   );
 };
 

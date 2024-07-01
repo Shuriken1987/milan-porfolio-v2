@@ -29,12 +29,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <section className="py-20">
+    <main className="py-20">
       <Hero project={project} />
-      <div className="max-w-4xl mx-auto">
+      <section className="max-w-4xl mx-auto">
         <Project project={project} />
-      </div>
+      </section>
      {!project.demo &&<Showcase project={project} />}
-    </section>
+    </main>
   );
 }

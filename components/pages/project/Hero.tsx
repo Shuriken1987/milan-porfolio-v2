@@ -6,13 +6,13 @@ type HeroProps = {
 };
 export const Hero = ({ project }: HeroProps) => {
   return (
-    <div className="hero flex justify-center">
+    <section className="hero flex justify-center">
       <Image
         src={project.featuredImg}
         alt={project.title}
         width={500}
         height={500}
       />
-    </div>
+    </section>
   );
 };

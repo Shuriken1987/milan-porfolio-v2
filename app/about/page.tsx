@@ -2,6 +2,11 @@ import React from 'react'
 
 export default function About () {
   return (
-    <div>page about</div>
+    <main>
+      <div className='min-h-screen max-w-4xl mx-auto flex flex-col items-center justify-center'>
+        <h1 className='text-3xl font-neueMontreal font-bold tracking-wider pb-4'>Page is still under construction</h1>
+        <p className="font-neueMontreal text-xl tracking-wider">I am working hard to bring this content to you soon. Stay tuned!</p>
+      </div>
+    </main>
   )
 }
