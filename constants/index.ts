@@ -19,11 +19,11 @@ import {
     github,
     linkedin,
     mongoDb,
-    renaxLeaveApplication,
-    renaxLogin,
-    renaxNotification,
-    renaxProfile,
-    renaxReport,
+    // renaxLeaveApplication,
+    // renaxLogin,
+    // renaxNotification,
+    // renaxProfile,
+    // renaxReport,
     renaxDashboard,
     truckSeek,
     truckSeekMobile,
@@ -103,15 +103,17 @@ export const testimonials: Testimonial[] = [    {
   },
 ];
   
-export const projects: ProjectType[] = [  {
+export const projects: ProjectType[] = [ 
+   {
     id: "project-1",
+    slug: "renax-app",
     title: "Renax App",
-    excerpt: ` The Workforce Management System that streamlines HR and
+    excerpt: `The Workforce Management System that streamlines HR and
               management processes, including leave applications, time
               reporting, and user account management, fostering a more
               transparent, efficient, and user-friendly work environment.`,
-    description: `I was tasked with creating a comprehensive workforce management system for a client aiming to enhance operational efficiency and employee engagement within their organization. The client's goal was to develop a unified platform that streamlined various HR and management processes, including leave applications, time reporting, and user account management, thereby fostering a more transparent, efficient, and user-friendly work environment.`,
-    role: "Software Developer / Project Lead",
+    description: `The Workforce Management System comprises a client app and a management portal, both designed to streamline HR and management processes. The client app offers employees an intuitive interface for managing leave applications, time reporting, and user account settings. The management portal provides managers with powerful tools for overseeing workforce operations, generating reports, and managing user accounts.`,
+    role: "Software Developer",
     tags: [
       {
         name: "react",
@@ -136,18 +138,56 @@ export const projects: ProjectType[] = [  {
     ],
     image: "/assets/projects/renax-dashboard.png",
     featuredImg: "/assets/projects/renax_featured.png",
-    // renaxLeaveApplicationImg: renaxLeaveApplication,
-    // renaxLoginImg: renaxLogin,
-    // renaxNotificationImg: renaxNotification,
-    // renaxProfileImg: renaxProfile,
-    renaxReportImg: "/assets/projects/TimeReportRenax.png",
+    images: [
+      "/assets/projects/renax_leave_application.png",
+      "/assets/projects/renax_notifications.png",
+      "/assets/projects/renax_profile.png",
+      "/assets/projects/renax_report.png",
+    ], 
     // demo: "https://rms-renax.vercel.app/",
+    technicalDetails: {
+      clientApp: [
+        { label: "Framework", detail: "Developed as a Progressive Web App (PWA) using React" },
+        { label: "Development and Build", detail: "Vite" },
+        { label: "State Management", detail: "Redux" },
+        { label: "API Interactions", detail: "Axios" },
+        { label: "Routing", detail: "React Router" },
+        { label: "Data Fetching and Caching", detail: "Tanstack Query (formerly React Query)" },
+        { label: "Testing", detail: "Vitest, Jest, Cypress, and @testing-library" },
+        { label: "Styling", detail: "TailwindCSS" },
+      ],
+      backend: [
+        { label: "Framework", detail: "Node.js with Express.js" },
+        { label: "Database", detail: "MongoDB using mongoose for object modeling" },
+        { label: "Authentication", detail: "JWT" },
+        { label: "Real-time Communication", detail: "Socket.io" },
+      ],
+    },
+    features: [
+      {
+        title: "Leave Applications",
+        description: "Employees can easily apply for leave, choose the type of leave, and track the status of their applications. This feature streamlines the process of requesting and managing time off, ensuring transparency and efficiency.",
+      },
+      {
+        title: "Time Reporting",
+        description: "Employees can log their working hours and select the client they are working for. This functionality enables accurate time tracking and client billing, ensuring accountability and streamlined reporting.",
+      },
+      {
+        title: "Notifications",
+        description: "Push notifications keep employees informed about the status of their leave applications and any global announcements. This ensures timely updates and effective communication within the organization.",
+      },
+      {
+        title: "User Account Settings",
+        description: "Employees have access to manage their personal details and account settings, providing them with control over their information and preferences.",
+      },
+    ],
   },
   {
     id: "project-2",
+    slug: "arbetscentralen",
     title: "Arbetscentralen",
     excerpt: `Recruitment company platform is a seamless platform for connecting job seekers with employers, while providing an easy-to-use backend for administrators to manage user accounts, job postings, and applications.`,
-    description:"Design and developed a website tailored specifically to the needs of a recruiting firm. The objectives were clear: to provide a platform that would allow job seekers and employers to connect seamlessly, while also enabling the company's administrators to manage the backend with ease.",
+    description: `This website is a comprehensive platform built for a recruiting company to facilitate seamless connections between job seekers and employers. The website allows users to browse available job listings, apply for jobs, and create accounts with the option to upload their CVs. It also features a subscription service for newsletters and a robust search functionality for job listings. Additionally, the platform includes a management portal for administrators to efficiently manage job postings, applications, and user accounts. This platform is designed to provide an intuitive and user-friendly experience for both job seekers and administrators, ensuring efficient management of all recruitment-related activities.`,
     role: "Full Stack Developer / Project Lead",
     tags: [
       {
@@ -169,13 +209,62 @@ export const projects: ProjectType[] = [  {
     // secondImage: arbetscentralenSecond,
     // thirdImage: arbetscentralenThird,
     // fourthImage: arbetscentralenFourth,
+    technicalDetails: {
+      clientApp: [
+        { label: "Framework", detail: "Built with Next.js for server-side rendering and static site generation" },
+        { label: "State Management", detail: "Redux" },
+        { label: "API Interactions", detail: "Axios" },
+        { label: "Authentication", detail: "NextAuth.js for handling authentication and user sessions" },
+        { label: "Image Handling", detail: "Cloudinary for image storage and transformations" },
+        { label: "Email Functionality", detail: "Nodemailer for sending emails" },
+        { label: "Styling", detail: "Utilizes SCSS for styling, with additional components from Ant Design and Bootstrap for UI elements" },
+      ],
+      backend: [
+        { label: "Framework", detail: "MongoDB for robust and scalable data storage, managed with Mongoose for object modeling." },
+        { label: "Authentication", detail: "Bcrypt and bcryptjs for password hashing and security" },
+        { label: "File Uploads", detail: "Multer for handling file uploads, such as CVs" },
+        { label: "Utilities", detail: "UUID for generating unique identifiers" },
+        { label: "Hosting", detail: "Deployed on Vercel, ensuring optimal performance and scalability" },
+      ],
+    },
+    features: [
+      {
+        title: "Job Listings",
+        description: "Users can browse available job listings with detailed descriptions and requirements, making it easy to find suitable job opportunities.",
+      },
+      {
+        title: "Job Applications",
+        description: "Users can apply for jobs directly through the website by submitting their CVs and other relevant documents. This feature simplifies the job application process for users.",
+      },
+      {
+        title: "Account Creation",
+        description: "Users can create personal accounts where they can upload their CVs, manage their profiles, and track their job applications.",
+      },
+      {
+        title: "CV Upload",
+        description: "Users have the option to upload their CVs, which can be accessed and reviewed by potential employers. This ensures that all necessary application materials are easily available.",
+      },
+      {
+        title: "Newsletter Subscription",
+        description: "Users can subscribe to newsletters to receive regular updates about new job listings and company news. This feature keeps users informed about the latest opportunities and developments.",
+      },
+      {
+        title: "Job Search",
+        description: "The website includes a robust search functionality that allows users to search for jobs based on keywords, locations, and other criteria. This helps users quickly find jobs that match their preferences.",
+      },
+      {
+        title: "Management Portal",
+        description: "The platform includes a management portal for administrators to manage job postings, applications, and user accounts. This ensures efficient handling of recruitment activities and user management.",
+      },
+    ],
     demo: "https://arbetscentralen.vercel.app",
   },
   {
     id: "project-3",
+    slug: "truck-seek",
     title: "Truck-Seek",
     excerpt: `Truck driver recruitment company website is a dedicated platform that connects qualified truck drivers with employers, offering an easy-to-navigate interface for job listings, applications, and seamless backend management for administrators.`,
-    description: 'This is a single-page calculator app built with React',
+    description: `The Truck-Seek website is a dedicated platform designed for a truck driver recruiting company to connect qualified truck drivers with employers. Users can submit their information through a detailed application form, which is then used by the recruiting company to match them with potential employers. Similarly, companies can submit their requirements through the form, allowing the recruiting company to find suitable truck drivers for their needs. This platform streamlines the recruitment process, providing an efficient and user-friendly way for both truck drivers and employers to connect through the recruiting company.`,
     role: "Frontend Developer ",
     tags: [
       {
@@ -190,30 +279,39 @@ export const projects: ProjectType[] = [  {
     featuredImg: "/assets/projects/truck-seek_featured.png",
     image: "/assets/projects/truck-seek.png",
     mobileImage: "/assets/projects/truck-seek-mobile.png",
+    technicalDetails: {
+      clientApp: [
+        { label: "Framework", detail: "Built with Next.js for server-side rendering and static site generation" },
+        { label: "API Interactions", detail: "Axios for handling HTTP requests and interactions with backend services" },
+        { label: "Email Functionality", detail: "Nodemailer for sending email notifications and confirmations" },
+        { label: "Testing", detail: "Vitest, Jest, Cypress, and @testing-library" },
+        { label: "Styling", detail: "TailwindCSS for styling, providing a modern and responsive design. Additional styling capabilities are provided by Sass" },
+      ],
+      backend: [
+        { label: "Email Handling", detail: "Nodemailer is used to send and manage emails for form submissions" },
+        { label: "Form Submissions", detail: "Data submitted through forms is processed and handled by the backend, facilitating seamless communication between job seekers, employers, and the recruiting company" },
+      ],
+    },
+    features: [
+      {
+        title: "Job Seeker Form Submission",
+        description: "Truck drivers can submit their information through a detailed application form, providing all necessary details for potential job matches.",
+      },
+      {
+        title: "Employer Form Submission",
+        description: "Companies can submit their job requirements through a dedicated form. This information is used by the recruiting company to find suitable truck drivers, ensuring a good match for both parties.",
+      },
+      {
+        title: "Responsive Design",
+        description: "The website is fully responsive, ensuring seamless functionality and visual appeal on devices of all sizes, from desktops to smartphones. This ensures that users can access the platform from any device.",
+      },
+      {
+        title: "Email",
+        description: "Automated email  are sent to users and employers to confirm form submissions and keep them updated on the status of their applications. This ensures timely communication and keeps all parties informed.",
+      },
+    ],
     demo: "https://www.truck-seek.com/",
   },
-
-  // {
-  //   id: 'project-5',
-  //   name: 'Milan Stanojevic',
-  //   description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
-  //   tags: [
-  //     {
-  //       name: 'nextjs',
-  //       color: 'blue-text-gradient',
-  //     },
-  //     {
-  //       name: 'supabase',
-  //       color: 'green-text-gradient',
-  //     },
-  //     {
-  //       name: 'css',
-  //       color: 'pink-text-gradient',
-  //     },
-  //   ],
-  //   image: renaxDashboard,
-  //   demo: 'https://renax-wms-renax.vercel.app/',
-  // },
 ];
 
 export const socials = [

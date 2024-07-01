@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Transition } from "./ui/Transitions";
-import { TextRevealClick } from "./ui/Typography";
-import { SectionTitle } from "./shared/SectionTitle";
 import { FaPlay } from "react-icons/fa";
 import { experiences } from "@/constants";
+import { Transition } from "@/components/ui/Transitions";
+import { SectionTitle } from "@/components/shared/SectionTitle";
+import { TextRevealClick } from "@/components/ui/Typography";
 
 export const Experience: React.FC = () => {
   const [activeCompany, setActiveCompany] = useState<keyof typeof experiences>("Edument");

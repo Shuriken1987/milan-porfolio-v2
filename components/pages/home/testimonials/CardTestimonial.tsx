@@ -1,7 +1,7 @@
 import { useTransform,  motion } from 'framer-motion';
 import { useRef } from 'react';
-import { Badge } from './Badge';
 import { Testimonial } from '@/types';
+import { Badge } from './Badge';
 
 interface CardTestimonialProps extends Testimonial {
     i: number;

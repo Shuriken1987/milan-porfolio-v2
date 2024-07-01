@@ -1,10 +1,10 @@
 // types.ts
-export interface Testimonial {
+  export interface Testimonial {
     id: string;
     name: string;
     title: string;
     text: string;
-  }
+  };
   
   export type ExperienceType = {
     title: string;
@@ -16,9 +16,20 @@ export interface Testimonial {
     name: string;
     icon: string;
   };
+
+  export type TechnicalDetail = {
+    label: string;
+    detail: string;
+  };
+  
+  export type Feature = {
+    title: string;
+    description: string;
+  };
   
   export type ProjectType = {
     id: string;
+    slug: string;
     title: string;
     excerpt: string;
     description: string;
@@ -36,6 +47,12 @@ export interface Testimonial {
     thirdImage?: string;
     fourthImage?: string;
     demo?: string;
+    images?: string[];
+    technicalDetails?: {
+      clientApp: TechnicalDetail[];
+      backend: TechnicalDetail[];
+    };
+    features?: Feature[];
   };
 
   export type NavLink = {

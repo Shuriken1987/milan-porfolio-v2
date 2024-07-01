@@ -1,33 +1,24 @@
 "use client";
-import { motion } from "framer-motion";
-import { ReactNode, useRef} from "react";
-// import { cn } from "@/utils/cn";
-// import { SocialHandle } from "@/utils/interfaces";
-import Link from "next/link";
-import { SectionHeading, TextReveal } from "../ui/Typography";
-import { SlideIn, Transition } from "../ui/Transitions";
-import { Input, Textarea } from "../ui/Input";
-import logo from "../../public/assets/logo/logo.png";
-import Image from "next/image";
-import { SectionTitle } from "./SectionTitle";
-import useContactForm from "@/hooks/useContactForm";
+import { Input, Textarea } from "@/components/ui/Input";
+import { Transition } from "@/components/ui/Transitions";
+import { SectionHeading, TextReveal } from "@/components/ui/Typography";
 import { socials } from "@/constants";
+import Link from "next/link";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { SectionTitle } from "@/components/shared/SectionTitle";
+import useContactForm from "@/hooks/useContactForm";
 
-export const Footer = () => {
+export const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const { formData, errors, loading, onHandleInput, handleSubmit } = useContactForm();
 
   return (
     <motion.section className="relative">
-      <Transition>
+        <Transition>
           <SectionTitle title="CONTACT" />
         </Transition>
       <div className="p-4 md:p-8 md:px-16">
-      
-        {/* <SectionHeading className="font-grandSlang">
-          <SlideIn className="text-slate-200 ">Get in touch</SlideIn> <br />{" "}
-          <SlideIn>Contact</SlideIn>
-        </SectionHeading> */}
         <div className="grid md:grid-cols-2 gap-10 md:pt-16">
           <div className="space-y-4">
             <form ref={formRef} onSubmit={handleSubmit}>
@@ -93,53 +84,51 @@ export const Footer = () => {
             </form>
           </div>
           <div className="md:justify-self-end flex flex-col">
-          <div className="pb-4">
+            <div className="pb-4">
               <Transition>
                 <SectionHeading className="font-grandSlang">
-                <span className="text-neutral-300">Get in touch</span>
+                  <span className="text-neutral-300">Get in touch</span>
                 </SectionHeading>
               </Transition>
               <div className="text-2xl md:text-4xl font-bold py-2 font-grandSlang">
                 <Transition>
-                  <Link className="text-[18px]" href="mailto:stanojevicmilan17@yahoo.com">
-                  <TextReveal>stanojevicmilan17@yahoo.com</TextReveal>
+                  <Link
+                    className="text-[18px]"
+                    href="mailto:stanojevicmilan17@yahoo.com"
+                  >
+                    <TextReveal>stanojevicmilan17@yahoo.com</TextReveal>
                   </Link>
                 </Transition>
               </div>
               <Transition>
                 <Link href="tel:+46760578216">
-                <div className="pb-1 text-neutral-300 font-neueMontreal tracking-widest font-bold">+46760578216</div>
+                  <div className="pb-1 text-neutral-300 font-neueMontreal tracking-widest font-bold">
+                    +46760578216
+                  </div>
                 </Link>
               </Transition>
               <Transition>
-                <div className="text-neutral-300 font-neueMontreal tracking-widest font-bold">Helsingborg, Sweden</div>
+                <div className="text-neutral-300 font-neueMontreal tracking-widest font-bold">
+                  Helsingborg, Sweden
+                </div>
               </Transition>
             </div>
 
-          <div className="flex md:gap-8 gap-4 mt-auto md:pb-16 font-neueMontreal tracking-widest">
-              {socials.map((social, index) =>
-               
-                  <Transition
-                    key={social.platform}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                  >
-                    <Link href={social.url} target="_blank">
-                      <TextReveal>{social.platform}</TextReveal>
-                    </Link>
-                  </Transition>
-              )}
+            <div className="flex md:gap-8 gap-4 mt-auto md:pb-16 font-neueMontreal tracking-widest">
+              {socials.map((social, index) => (
+                <Transition
+                  key={social.platform}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                >
+                  <Link href={social.url} target="_blank">
+                    <TextReveal>{social.platform}</TextReveal>
+                  </Link>
+                </Transition>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <footer className="flex items-center justify-between md:px-8 px-2 pt-4 pb-0 text-sm">
-        <Transition>
-          <Image src={logo} alt="logo" width={50} height={50} />
-        </Transition>
-        <Transition>
-          <div className="font-neueMontreal ">&copy; {new Date().getFullYear()} Milan Stanojevic</div>
-        </Transition>
-      </footer>
     </motion.section>
   );
 };

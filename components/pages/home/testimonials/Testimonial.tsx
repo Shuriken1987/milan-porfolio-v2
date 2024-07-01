@@ -1,10 +1,10 @@
 "use client";
+import { SectionTitle } from "@/components/shared/SectionTitle";
+import { Transition } from "@/components/ui/Transitions";
+import { testimonials } from "@/constants";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { testimonials } from "../constants";
 import CardTestimonial from "./CardTestimonial";
-import { Transition } from "./ui/Transitions";
-import { SectionTitle } from "./shared/SectionTitle";
 
 export const Testimonials: React.FC = () => {
   const container = useRef(null);

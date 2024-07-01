@@ -40,12 +40,12 @@ import typescript from "./tech/typescript.png";
 // import graphql from './tech/graphql.png';
 // import postgresql from './tech/postgresql.png';
 
-import renax from "./projects/renax.png";
-import renaxLeaveApplication from "./projects/LeaveApplicationRenax.png";
-import renaxLogin from "./projects/LoginRenax.png";
-import renaxNotification from "./projects/NotificationRenax.png";
-import renaxProfile from "./projects/ProfilRenax.png";
-import renaxReport from "./projects/TimeReportRenax1.png";
+// import renax from "./projects/renax.png";
+// import renaxLeaveApplication from "./projects/LeaveApplicationRenax.png";
+// import renaxLogin from "./projects/LoginRenax.png";
+// import renaxNotification from "./projects/NotificationRenax.png";
+// import renaxProfile from "./projects/ProfilRenax.png";
+// import renaxReport from "./projects/TimeReportRenax1.png";
 import renaxDashboard from "./projects/renax-dashboard.png";
 
 import arbetscentralen from "./projects/arbetscentralen.png";
@@ -94,12 +94,12 @@ export {
   redux,
   tailwind,
   typescript,
-  renax,
-  renaxLeaveApplication,
-  renaxLogin,
-  renaxNotification,
-  renaxProfile,
-  renaxReport,
+  // renax,
+  // renaxLeaveApplication,
+  // renaxLogin,
+  // renaxNotification,
+  // renaxProfile,
+  // renaxReport,
   arbetscentralen,
   arbetscentralenMobile,
   arbetscentralenSecond,
