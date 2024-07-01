@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
@@ -44,7 +44,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <GoogleTagManager gtmId="GT-NNV78TSJ" />
       </head>
       <body className={`${grandSlang.variable} ${neueMontreal.variable}`}>
         <Navbar />
@@ -54,6 +53,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
       </body>
+      <GoogleAnalytics gaId="G-638T9MMTET" />
     </html>
   );
 }
