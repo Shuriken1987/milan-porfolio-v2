@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "@/components/common/Navbar";
@@ -9,23 +10,23 @@ import { Footer } from "@/components/common/Footer";
 const grandSlang = localFont({
   src: [
     {
-      path: '../public/fonts/GrandSlang-B-Side.ttf',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/GrandSlang-B-Side.ttf",
+      weight: "400",
+      style: "normal",
     },
   ],
-  variable: '--grandSlang',
+  variable: "--grandSlang",
 });
 
 const neueMontreal = localFont({
   src: [
     {
-      path: '../public/fonts/ppneuemontreal-book.otf',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/ppneuemontreal-book.otf",
+      weight: "400",
+      style: "normal",
     },
   ],
-  variable: '--neueMontreal',
+  variable: "--neueMontreal",
 });
 
 export const metadata: Metadata = {
@@ -40,12 +41,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GT-NNV78TSJ" />
       <body className={`${grandSlang.variable} ${neueMontreal.variable}`}>
         <Navbar />
         {children}
         <ToastContainer />
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
