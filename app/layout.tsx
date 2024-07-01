@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 import localFont from "next/font/local";
 import { ToastContainer } from "react-toastify";
@@ -45,8 +47,10 @@ export default function RootLayout({
       <body className={`${grandSlang.variable} ${neueMontreal.variable}`}>
         <Navbar />
         {children}
+        <SpeedInsights />
         <ToastContainer />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
