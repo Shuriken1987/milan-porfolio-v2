@@ -43,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
       <GoogleTagManager gtmId="GT-NNV78TSJ" />
+      </head>
       <body className={`${grandSlang.variable} ${neueMontreal.variable}`}>
         <Navbar />
         {children}
