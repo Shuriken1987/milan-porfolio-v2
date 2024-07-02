@@ -18,7 +18,7 @@ export const Experience: React.FC = () => {
 
       <Transition>
         <div className="flex flex-col md:flex-row md:justify-between max-w-7xl mx-auto my-20">
-          <div className="sidebar md:flex-auto font-grandSlang font-bold tracking-widest">
+          <div className="sidebar md:flex-auto font-grandSlang font-bold tracking-widest md:w-1/4">
             <ul className="flex flex-row md:flex-col text-[20px] md:text-[40px] py-10 md:py-0">
               {Object.keys(experiences).map((company) => (
                 <li
@@ -37,7 +37,7 @@ export const Experience: React.FC = () => {
               ))}
             </ul>
           </div>
-          <div className="changing-content md:flex-auto font-neueMontreal text-[20px]">
+          <div className="changing-content md:flex-auto font-neueMontreal text-[20px] md:w-3/4">
             <div className="pl-5 mb-4">
               <h3>{experiences[activeCompany].title}</h3>
               <p>{experiences[activeCompany].period}</p>

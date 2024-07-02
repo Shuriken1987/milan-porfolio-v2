@@ -1,4 +1,13 @@
+import { Metadata } from 'next';
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: "Milan Stanojevic",
+  description: "Software developer, frontend developer.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function Contact () {
   return (
