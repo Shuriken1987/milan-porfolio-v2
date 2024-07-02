@@ -2,10 +2,10 @@ import { Transition } from "@/components/ui/Transitions";
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-hidden h-screen">
+    <section className="relative overflow-hidden md:h-screen">
       <div className="relative z-10 h-full flex items-center" >
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 flex items-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto pt-10">
             <div className="mt-5 md:mt-0 max-w-2xl">
               <h1 className='heroHeadings'>
                 <span className="block sm:text-[90px] tracking-widest font-extrabold ">
@@ -17,9 +17,7 @@ export const Hero = () => {
 
             <div className="mt-5 max-w-full">
               <Transition>
-                <p
-                  className={`font-neueMontreal lg:text-[54px] sm:text-[30px] xs:text-[24px] text-[30px] lg:leading-[44px] mt-10`}
-                >
+                <p className={`font-neueMontreal lg:text-[54px] sm:text-[30px] xs:text-[24px] text-[30px] lg:leading-[44px] mt-10`} >
                   Software Developer & Code Perfectionist specializing in
                   creating high-performance, bug-free websites and web
                   applications

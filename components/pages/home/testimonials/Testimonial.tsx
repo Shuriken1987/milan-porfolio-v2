@@ -15,7 +15,7 @@ export const Testimonials: React.FC = () => {
   const title = "WORDS EXPRESSED";
 
   return (
-    <section ref={container} className="my-20">
+    <section ref={container} className="py-20">
       <Transition>
         <SectionTitle title={title} />
       </Transition>

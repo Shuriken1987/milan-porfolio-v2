@@ -62,3 +62,9 @@ body::-webkit-scrollbar {
   
     }
   }
+  ul .experience::before {
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: black;
+  }

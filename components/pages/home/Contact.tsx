@@ -14,11 +14,11 @@ export const Contact = () => {
   const { formData, errors, loading, onHandleInput, handleSubmit } = useContactForm();
 
   return (
-    <motion.section className="relative">
+    <motion.section className="relative py-20">
         <Transition>
           <SectionTitle title="CONTACT" />
         </Transition>
-      <div className="p-4 md:p-8 md:px-16">
+      <div className="p-4 md:p-8 md:px-16 mt-20">
         <div className="grid md:grid-cols-2 gap-10 md:pt-16">
           <div className="space-y-4">
             <form ref={formRef} onSubmit={handleSubmit}>

@@ -22,7 +22,7 @@ const config: Config = {
   plugins: [function({ addUtilities }: { addUtilities: Function }) {
     const newUtilities = {
       '.heroHeadings': {
-        'font-size': '50px',
+        'font-size': '54px',
         'line-height': '25px',
         '@screen sm': {
           'font-size': '60px',
@@ -42,7 +42,7 @@ const config: Config = {
         'font-family': 'var(--grandSlang), cursive',
       },
       '.sectionHeadings': {
-        'font-size': '48px',
+        'font-size': '58px',
         'line-height': '40px',
         '@screen sm': {
           'font-size': '80px',

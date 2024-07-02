@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { FaPlay } from "react-icons/fa";
 import { experiences } from "@/constants";
 import { Transition } from "@/components/ui/Transitions";
 import { SectionTitle } from "@/components/shared/SectionTitle";
@@ -38,14 +37,13 @@ export const Experience: React.FC = () => {
             </ul>
           </div>
           <div className="changing-content md:flex-auto font-neueMontreal text-[20px] md:w-3/4">
-            <div className="pl-5 mb-4">
+            <div className="mb-4">
               <h3>{experiences[activeCompany].title}</h3>
               <p>{experiences[activeCompany].period}</p>
             </div>
-            <ul className="pl-10">
+            <ul className=" relative">
               {experiences[activeCompany].description.map((value, index) => (
-                <li key={index} className="company-valueription">
-                  <FaPlay className="inline-block mr-2" style={{fontSize: '8px'}}/>
+                <li key={index} className="experience relative pl-8 pb-2">
                   {value}
                 </li>
               ))}

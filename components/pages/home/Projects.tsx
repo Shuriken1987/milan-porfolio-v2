@@ -10,7 +10,7 @@ import Link from "next/link";
 export const Projects: React.FC = () => {
   const title = "SELECTED WORK";
   return (
-    <section className="md:my-20">
+    <section className="py-20">
       <Transition>
         <SectionTitle title={title} />
       </Transition>
