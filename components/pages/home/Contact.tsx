@@ -14,7 +14,7 @@ export const Contact = () => {
   const { formData, errors, loading, onHandleInput, handleSubmit } = useContactForm();
 
   return (
-    <motion.section className="relative py-20">
+    <motion.section className="relative">
         <Transition>
           <SectionTitle title="CONTACT" />
         </Transition>

@@ -10,10 +10,10 @@ import { NavLink } from "@/types";
 export const Navbar: React.FC = () => {
   const [active, setActive] = useState<string>("");
   return (
-    <header>
+    <header className="sticky top-0 z-20">
       <nav
-        className={`paddingX w-full flex items-center py-2 sticky transition-colors duration-500 hover:bg-white 
-      top-0 z-20 bg-white sm:opacity-[0.97] xxs:h-[12vh]`}
+        className={`paddingX w-full flex items-center py-2 transition-colors duration-500 hover:bg-white 
+       bg-white sm:opacity-[0.97] xxs:h-[12vh]`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link

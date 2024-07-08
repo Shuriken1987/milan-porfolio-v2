@@ -6,14 +6,17 @@ import { Transition } from "@/components/ui/Transitions";
 import { SectionTitle } from "@/components/shared/SectionTitle";
 import { TextReveal } from "@/components/ui/Typography";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Projects: React.FC = () => {
   const title = "SELECTED WORK";
-  return (
+  const pathname = usePathname();  return (
     <section className="py-20">
-      <Transition>
-        <SectionTitle title={title} />
-      </Transition>
+      {pathname !== "/projects" && (
+        <Transition>
+          <SectionTitle title={title} />
+        </Transition>
+      )}
       <div className="md:py-20">
         {projects.map((project: ProjectType, i: number) => (
           <Transition key={i}>
@@ -32,7 +35,7 @@ export const Projects: React.FC = () => {
                 <p className="font-neueMontreal tracking-widest text-[24px]">
                   {project.excerpt}
                 </p>
-                <Link href={`/projects/${project.slug}`}>
+                <Link href={`/projects/${project.slug}`} target="_blank">
                   <motion.button
                     type="submit"
                     whileHover="whileHover"
