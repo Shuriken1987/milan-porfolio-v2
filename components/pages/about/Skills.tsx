@@ -7,7 +7,7 @@ export const Skills = () => {
         Technical Skills
       </h3>
       <p className="font-neueMontreal text-2xl tracking-wider leading-normal">
-        Here are some of the technologies and tools I’ve been working with
+        Here are some of the technologies and tools I&apos;ve been working with
         recently:
       </p>
       <ul className=" relative font-neueMontreal text-2xl leading-normal">
