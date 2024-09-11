@@ -39,7 +39,7 @@ export const Competencies = () => {
           </li>
         </ul>
       </section>
-      <section className="w-full">
+{/*       <section className="w-full">
         <h3 className="text-3xl font-grandSlang font-bold tracking-wider py-4">
           Basketball Coaching and Playing
         </h3>
@@ -63,7 +63,7 @@ export const Competencies = () => {
             team.
           </li>
         </ul>
-      </section>
+      </section> */}
     </>
   );
 };
